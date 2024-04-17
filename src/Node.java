@@ -5,6 +5,14 @@ public class Node implements Comparable<Node> {
     public int frequency;
     public Node left, right;
 
+    // constrcutor
+    public Node(char data, int frequency) {
+        this.data = data;
+        this.frequency = frequency;
+        left = right = null;
+    }
+
+
 
     // This method compares the frequncy
 
@@ -17,14 +25,6 @@ public class Node implements Comparable<Node> {
             return 0;
         }
 
-    }
-
-
-    // constrcutor
-    public Node(char data, int frequency) {
-        this.data = data;
-        this.frequency = frequency;
-        left = right = null;
     }
 }
 

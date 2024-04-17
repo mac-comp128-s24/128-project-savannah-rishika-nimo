@@ -1,6 +1,7 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Map;
+import java.util.PriorityQueue;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -10,10 +11,13 @@ import org.junit.jupiter.api.Test;
 public class HuffmanTest {
     
     Huffman huffman;
-    Map<Character, Integer> newMap = huffman.readFile("abbc");
+    Huffman queueHuffman;
+    Map<Character, Integer> newMap = huffman.readFile();
+
 
     public HuffmanTest(){
         huffman= new Huffman("abbc");
+        queueHuffman= new Huffman("aaaaaabbbccccddddde");
     }
 
     @Test
@@ -25,10 +29,14 @@ public class HuffmanTest {
     }
 
     @Test
-    public void testCreateList(){
-        List<CharFrequency> newList = huffman.createList(newMap);
-        assertEquals(4, newList.size());
-
+    public void testCreateQueue(){
+        PriorityQueue<Node> heap = queueHuffman.createQueue(queueHuffman.readFile());
+        assertEquals(5, heap.size());
+        assertEquals(6,  heap.poll().frequency);
+        assertEquals(5,  heap.poll().frequency);
+        assertEquals(4,  heap.poll().frequency);
+        assertEquals(1,  heap.poll().frequency);
+        assertEquals(3,  heap.poll().frequency);
 
     }
 
