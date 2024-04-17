@@ -15,6 +15,7 @@ public class FileGUI {
     private TextField inputText;
     private GraphicsText title;
     private Button addTextButton;
+    private Heap queue;
 
     public FileGUI() {
         canvas = new CanvasWindow("File Compressor Program", 900, 800);
@@ -22,6 +23,8 @@ public class FileGUI {
         title = new GraphicsText();
         addTextButton = new Button("Compress Text");
         setUpUI();
+        queue = new Heap();
+        queue.print();
 
 
     }
