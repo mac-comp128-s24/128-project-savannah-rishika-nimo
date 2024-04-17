@@ -11,16 +11,11 @@ public class Node implements Comparable<Node> {
     public int compareTo(Node o) {
         if (this.frequency < o.frequency) {
             return +1;
-        } else if ( this.frequency > o.frequency) {
-            return 1;
+        } else if (this.frequency > o.frequency) {
+            return -1;
         } else {
-            return this.
+            return 0;
         }
-
-        }
-
-
-    return data;
 
     }
 
