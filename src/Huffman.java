@@ -28,13 +28,12 @@ public class Huffman {
     }
 }
 
-public List<CharFrequency> createList(Map<Character, Integer> inputMap){
-    List<CharFrequency> charList= new ArrayList();
+public Heap createList(Map<Character, Integer> inputMap){
     for (Map.Entry<Character, Integer> entry: inputMap.entrySet()){
-        CharFrequency newChar= new CharFrequency(entry.getKey(), entry.getValue());
-        charList.add(newChar);
+        Node newNode= new Node(entry.getKey(), entry.getValue());
+
     }
-    Collections.sort(charList);
+   
+
     
-    return charList;
 }
