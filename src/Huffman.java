@@ -1,5 +1,9 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.*;
+
 
 public class Huffman {
 
@@ -15,10 +19,22 @@ public class Huffman {
             if (frequencyMap.get(eachChar) != null) {
                 Integer freq = frequencyMap.get(eachChar);
                 freq = freq + 1;
+                frequencyMap.put(eachChar, freq);
             } else {
                 frequencyMap.put(eachChar, 1);
             }
         }
         return frequencyMap;
     }
+}
+
+public List<CharFrequency> createList(Map<Character, Integer> inputMap){
+    List<CharFrequency> charList= new ArrayList();
+    for (Map.Entry<Character, Integer> entry: inputMap.entrySet()){
+        CharFrequency newChar= new CharFrequency(entry.getKey(), entry.getValue());
+        charList.add(newChar);
+    }
+    Collections.sort(charList);
+    
+    return charList;
 }
