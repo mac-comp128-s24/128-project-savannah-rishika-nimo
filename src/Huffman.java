@@ -12,8 +12,8 @@ public class Huffman {
     String inputString;
 
     public Huffman(String input) {
-        maxHeap= new PriorityQueue<>(Collections.reverseOrder());
-        inputString=input;
+        maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+        inputString = input;
 
     }
 
@@ -31,14 +31,14 @@ public class Huffman {
         }
         return frequencyMap;
     }
-}
 
-public PriorityQueue<Node> createQueue(Map<Character, Integer> inputMap){
-    for (Map.Entry<Character, Integer> entry: inputMap.entrySet()){
-        Node newNode= new Node(entry.getKey(), entry.getValue());
-        maxHeap.add(newNode);
-    }  
-    return maxHeap;
-}
 
+    public PriorityQueue<Node> createQueue(Map<Character, Integer> inputMap) {
+        for (Map.Entry<Character, Integer> entry : inputMap.entrySet()) {
+            Node newNode = new Node(entry.getKey(), entry.getValue());
+            maxHeap.add(newNode);
+        }
+        return maxHeap;
+    }
+}
 

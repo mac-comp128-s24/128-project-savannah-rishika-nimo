@@ -17,10 +17,10 @@ public class Heap {
 
     }
 
-    public void print() {
-        queu
-        System.out.println(queue);
-    }
+    // public void print() {
+    // queu
+    // System.out.println(queue);
+    // }
 
 
 }
