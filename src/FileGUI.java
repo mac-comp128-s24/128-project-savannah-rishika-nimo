@@ -48,6 +48,11 @@ public class FileGUI {
 
     }
 
+    public String getUserInput() {
+        return inputText.getText();
+
+    }
+
     public static void main(String[] args) {
         FileGUI window = new FileGUI();
     }

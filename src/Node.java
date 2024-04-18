@@ -4,14 +4,30 @@ public class Node implements Comparable<Node> {
     public char data;
     public int frequency;
     public Node left, right;
+    public Node parent;
+
+    // /**
+    // * Reference to the left child.
+    // */
+    // public Node<E> left;
+    // /**
+    // * Reference to the right child.
+    // */
+    // public Node<E> right;
+
+    // /**
+    // * Reference to the parent
+    // */
+    // public Node<E> parent;
 
     // constrcutor
     public Node(char data, int frequency) {
         this.data = data;
         this.frequency = frequency;
-        left = right = null;
+        left = null;
+        right = null;
+        parent = null;
     }
-
 
 
     // This method compares the frequncy
