@@ -32,12 +32,13 @@ public class Huffman {
     }
 
 
-    public PriorityQueue<Node> createQueue(Map<Character, Integer> inputMap) {
+    public void insertQueue(Map<Character, Integer> inputMap) {
         for (Map.Entry<Character, Integer> entry : inputMap.entrySet()) {
             Node newNode = new Node(entry.getKey(), entry.getValue());
             maxHeap.add(newNode);
         }
-        return maxHeap;
     }
+
+
 }
 

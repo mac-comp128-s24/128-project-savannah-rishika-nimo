@@ -9,19 +9,18 @@ import java.util.ArrayList;
 import org.junit.jupiter.api.Test;
 
 public class HuffmanTest {
-    
+
     Huffman huffman;
     Huffman queueHuffman;
-   
 
 
-    public HuffmanTest(){
-        huffman= new Huffman("abbc");
-        queueHuffman= new Huffman("aaaaaabbbccccddddde");
+    public HuffmanTest() {
+        huffman = new Huffman("abbc");
+        queueHuffman = new Huffman("aaaaaabbbccccddddde");
     }
 
     @Test
-    public void testReadFile(){
+    public void testReadFile() {
         Map<Character, Integer> newMap = huffman.readFile();
         assertEquals(3, newMap.size());
         assertEquals(1, newMap.get('a'));
@@ -30,18 +29,16 @@ public class HuffmanTest {
     }
 
     @Test
-    public void testCreateQueue(){
-        PriorityQueue<Node> heap = queueHuffman.createQueue(queueHuffman.readFile());
+    public void testCreateQueue() {
+        PriorityQueue<Node> heap = queueHuffman.insertQueue(queueHuffman.readFile());
         assertEquals(5, heap.size());
-        assertEquals(6,  heap.poll().frequency);
-        assertEquals(5,  heap.poll().frequency);
-        assertEquals(4,  heap.poll().frequency);
-        assertEquals(1,  heap.poll().frequency);
-        assertEquals(3,  heap.poll().frequency);
+        assertEquals(6, heap.poll().frequency);
+        assertEquals(5, heap.poll().frequency);
+        assertEquals(4, heap.poll().frequency);
+        assertEquals(3, heap.poll().frequency);
+        assertEquals(1, heap.poll().frequency);
 
     }
-
-   
 
 
 }

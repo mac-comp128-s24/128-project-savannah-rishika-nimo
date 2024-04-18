@@ -24,7 +24,6 @@ public class FileGUI {
         addTextButton = new Button("Compress Text");
         setUpUI();
         queue = new Heap();
-        // queue.print();
 
 
     }
