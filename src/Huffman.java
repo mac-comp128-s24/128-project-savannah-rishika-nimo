@@ -8,7 +8,7 @@ import java.util.PriorityQueue;
 
 public class Huffman {
 
-    PriorityQueue<Node> maxHeap;
+    public PriorityQueue<Node> maxHeap;
     String inputString;
 
     public Huffman(String input) {

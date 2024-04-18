@@ -30,13 +30,15 @@ public class HuffmanTest {
 
     @Test
     public void testCreateQueue() {
-        PriorityQueue<Node> heap = queueHuffman.insertQueue(queueHuffman.readFile());
-        assertEquals(5, heap.size());
-        assertEquals(6, heap.poll().frequency);
-        assertEquals(5, heap.poll().frequency);
-        assertEquals(4, heap.poll().frequency);
-        assertEquals(3, heap.poll().frequency);
-        assertEquals(1, heap.poll().frequency);
+
+        Map<Character, Integer> queueMap = queueHuffman.readFile();
+        queueHuffman.insertQueue(queueMap);
+        assertEquals(5, queueHuffman.maxHeap.size());
+        assertEquals(6, queueHuffman.maxHeap.poll().frequency);
+        assertEquals(5, queueHuffman.maxHeap.poll().frequency);
+        assertEquals(4, queueHuffman.maxHeap.poll().frequency);
+        assertEquals(3, queueHuffman.maxHeap.poll().frequency);
+        assertEquals(1, queueHuffman.maxHeap.poll().frequency);
 
     }
 
