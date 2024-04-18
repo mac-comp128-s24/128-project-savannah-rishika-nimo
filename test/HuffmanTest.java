@@ -12,7 +12,7 @@ public class HuffmanTest {
     
     Huffman huffman;
     Huffman queueHuffman;
-    Map<Character, Integer> newMap = huffman.readFile();
+   
 
 
     public HuffmanTest(){
@@ -22,6 +22,7 @@ public class HuffmanTest {
 
     @Test
     public void testReadFile(){
+        Map<Character, Integer> newMap = huffman.readFile();
         assertEquals(3, newMap.size());
         assertEquals(1, newMap.get('a'));
         assertEquals(2, newMap.get('b'));

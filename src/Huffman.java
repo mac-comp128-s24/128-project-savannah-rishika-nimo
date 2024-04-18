@@ -12,9 +12,8 @@ public class Huffman {
     String inputString;
 
     public Huffman(String input) {
-        maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+        maxHeap = new PriorityQueue<>();
         inputString = input;
-
     }
 
     public Map<Character, Integer> readFile() {
