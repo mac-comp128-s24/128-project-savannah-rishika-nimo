@@ -1,7 +1,6 @@
 
 
 public class HuffmanTree {
-    // private Node root;
     private Huffman huffman;
     private FileGUI fileGUI;
 
@@ -16,7 +15,9 @@ public class HuffmanTree {
     }
 
     public void contructTree() {
+
         while (!huffman.maxHeap.isEmpty()) {
+
             if (huffman.maxHeap.size() > 1) {
                 Node firstLeaf = huffman.maxHeap.poll();
                 Node secondleaf = huffman.maxHeap.poll();
@@ -27,6 +28,7 @@ public class HuffmanTree {
                 huffman.maxHeap.add(parentNode);
 
             }
+
         }
 
 
