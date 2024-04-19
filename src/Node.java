@@ -1,7 +1,7 @@
 
 public class Node implements Comparable<Node> {
 
-    public char data;
+    public Character data;
     public int frequency;
     public Node left, right;
     public Node parent;
@@ -21,7 +21,7 @@ public class Node implements Comparable<Node> {
     // public Node<E> parent;
 
     // constrcutor
-    public Node(char data, int frequency) {
+    public Node(Character data, int frequency) {
         this.data = data;
         this.frequency = frequency;
         left = null;
