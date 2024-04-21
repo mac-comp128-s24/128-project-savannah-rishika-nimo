@@ -4,11 +4,13 @@ public class HuffmanTree {
     private Huffman huffman;
     private FileGUI fileGUI;
     private Node root;
+    private HashMap<Character, BitSet> codeMap;
 
 
     public HuffmanTree() {
         huffman = new Huffman(fileGUI.getUserInput());
         root = null;
+        codeMap = new HashMap<>();
 
 
     }
@@ -27,24 +29,19 @@ public class HuffmanTree {
         }
     }
 
-    public void traverseTree() {
-        HashMap<Character, BitSet> codeMap = new HashMap<>();
-        // BitSet bit = new BitSet();
+    public void traverseTree(Node node, int depth, BitSet bit) {
+        BitSet left = new BitSet();
+        BitSet right = new BitSet();
+        right = (BitSet) bit.clone();
+        right.set(depth);
 
-        // BitSet right = bit.clone();
+        if (node.data != null) {
+            codeMap.put(node.data, bit);
+        }
+        traverseTree(node.left, depth + 1, left);
+        traverseTree(node.right, depth + 1, right);
 
-
-        // for (int i=0; i<bit.size();i++){
-
-        // }
-
-        // Node currentNode= root.left;
-
-
-        // if (currentNode.data!=null){
-        // codeMap.put(currentNode.data, null)
-        // }
-
+        // left.or(right);
 
     }
 
