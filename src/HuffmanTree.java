@@ -41,7 +41,8 @@ public class HuffmanTree {
         traverseTree(node.left, depth + 1, left);
         traverseTree(node.right, depth + 1, right);
 
-        // left.or(right);
+        left.or(right); // merge the bits of left and right
+
 
     }
 
