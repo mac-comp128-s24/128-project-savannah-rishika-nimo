@@ -8,12 +8,14 @@ import java.util.PriorityQueue;
 
 public class Huffman {
 
-    public PriorityQueue<Node> maxHeap;
+    PriorityQueue<Node> maxHeap;
     String inputString;
+    HuffmanTree tree;
 
     public Huffman(String input) {
         maxHeap = new PriorityQueue<>();
         inputString = input;
+        tree= new HuffmanTree();
     }
 
     public Map<Character, Integer> readFile() {
@@ -32,35 +34,28 @@ public class Huffman {
     }
 
 
-    public void insertQueue(Map<Character, Integer> inputMap) {
+    public PriorityQueue<Node> createQueue(Map<Character, Integer> inputMap) {
         for (Map.Entry<Character, Integer> entry : inputMap.entrySet()) {
             Node newNode = new Node(entry.getKey(), entry.getValue());
             maxHeap.add(newNode);
         }
+        return maxHeap;
     }
 
-    // Method to encode input data
-    public String encodeData(String input, Map<Character, BitSet> codeMap) {
-        StringBuilder encodeData = new StringBuilder();
-        for (char c : input.toCharArray()) {
-            BitSet huffmanCode = codeMap.get(c);
-            encodeData.append(bitSetToString(huffmanCode));
+
+    public void constructTree() {
+        while (maxHeap.size() > 1) {
+            Node firstLeaf = maxHeap.poll();
+            Node secondleaf = maxHeap.poll();
+            int newFrequency = firstLeaf.frequency + secondleaf.frequency;
+            Node parentNode = new Node(null, newFrequency);
+            tree.root= parentNode;
+            parentNode.left = firstLeaf;
+            parentNode.right = secondleaf;
+            maxHeap.add(parentNode);
         }
-        return encodeData.toString();
     }
-
-    // method that turns the bit into a string
-    // it takes the binary code and turns it into "1" or "0"
-    private String bitSetToString(BitSet bitset) {
-        StringBuilder stringBuilder = new StringBuilder();
-        for (int i = 0; i < bitset.length(); i++) {
-            stringBuilder.append(bitset.get(i) ? "1" : "0");
-
-        }
-        return stringBuilder.toString();
-
-    }
-
-
 }
+
+
 

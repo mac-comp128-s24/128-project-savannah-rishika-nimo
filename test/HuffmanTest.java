@@ -44,6 +44,7 @@ public class HuffmanTest {
     @Test
     public void testTreeTraversal(){
         HuffmanTree tree= new HuffmanTree();
+        huffman.constructTree();
         tree.callTraversal();
         
 
