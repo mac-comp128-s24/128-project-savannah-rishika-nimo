@@ -12,9 +12,16 @@ public class Huffman {
     String inputString;
     HuffmanTree tree;
 
+    public HuffmanTree getTree() {
+        return tree;
+    }
+
     public Huffman(String input) {
-        maxHeap = new PriorityQueue<>();
         inputString = input;
+
+        maxHeap = new PriorityQueue<>();
+        Map<Character, Integer> frequencMap = readFile();
+        maxHeap = createQueue(frequencMap);
         tree = new HuffmanTree();
     }
 

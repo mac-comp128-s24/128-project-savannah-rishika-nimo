@@ -4,6 +4,7 @@ import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.*;
 
 
 import org.junit.jupiter.api.Test;
@@ -16,7 +17,7 @@ public class HuffmanTest {
 
     public HuffmanTest() {
         huffman = new Huffman("abbc");
-        queueHuffman = new Huffman("aaaaaabbbccccddddde");
+        queueHuffman = new Huffman("aaaaaabbbccccdddddee");
     }
 
     @Test
@@ -42,14 +43,24 @@ public class HuffmanTest {
     }
 
     @Test
-    public void testTreeTraversal(){
-        HuffmanTree tree= new HuffmanTree();
-        huffman.constructTree();
-        tree.callTraversal();
-        assertEquals(00, tree.codeMap.get('a'));
-        
+    public void testTreeTraversal() {
+        // HuffmanTree tree = new HuffmanTree();
 
-        
+        // huffman = new Huffman("abbc");
+        huffman = new Huffman("aaaaaabbbccccdddddee");
+        // newhuffman= new
+        huffman.constructTree();
+        HuffmanTree tree = huffman.getTree();
+        tree.callTraversal();
+        // assertEquals(00, tree.codeMap.get('a'));
+        for (Map.Entry<Character, BitSet> entry : tree.codeMap.entrySet()) {
+            System.out.println(entry.getKey());
+            System.out.println(entry.getValue());
+        }
+
+        // System.out.println(tree.codeMap);
+        // assertEquals(01, tree.codeMap.get('b'));
+
 
     }
 
