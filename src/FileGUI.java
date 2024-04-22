@@ -3,8 +3,6 @@ import edu.macalester.graphics.FontStyle;
 import edu.macalester.graphics.GraphicsGroup;
 import edu.macalester.graphics.GraphicsObject;
 import edu.macalester.graphics.GraphicsText;
-import edu.macalester.graphics.Image;
-import edu.macalester.graphics.Point;
 import edu.macalester.graphics.ui.Button;
 import edu.macalester.graphics.ui.TextField;
 import java.awt.Color;
@@ -15,7 +13,6 @@ public class FileGUI {
     private TextField inputText;
     private GraphicsText title;
     private Button addTextButton;
-    private Heap queue;
 
     public FileGUI() {
         canvas = new CanvasWindow("File Compressor Program", 900, 800);
@@ -23,7 +20,6 @@ public class FileGUI {
         title = new GraphicsText();
         addTextButton = new Button("Compress Text");
         setUpUI();
-        queue = new Heap();
 
 
     }

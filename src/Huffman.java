@@ -46,9 +46,7 @@ public class Huffman {
             BitSet huffmanCode = codeMap.get(c);
             encodeData.append(bitSetToString(huffmanCode));
         }
-
         return encodeData.toString();
-
     }
 
     // method that turns the bit into a string
