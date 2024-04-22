@@ -3,7 +3,7 @@ import java.util.*;
 public class HuffmanTree {
     private Huffman huffman;
     private FileGUI fileGUI;
-    private Node root;
+    public Node root;
     private HashMap<Character, BitSet> codeMap;
 
 
@@ -15,19 +15,6 @@ public class HuffmanTree {
 
     }
 
-    public void contructTree() {
-
-        while (huffman.maxHeap.size() > 1) {
-            Node firstLeaf = huffman.maxHeap.poll();
-            Node secondleaf = huffman.maxHeap.poll();
-            int newFrequency = firstLeaf.frequency + secondleaf.frequency;
-            Node parentNode = new Node(null, newFrequency);
-            root = parentNode;
-            parentNode.left = firstLeaf;
-            parentNode.right = secondleaf;
-            huffman.maxHeap.add(parentNode);
-        }
-    }
 
     public void traverseTree(Node node, int depth, BitSet bit) {
         BitSet left = new BitSet();
@@ -42,8 +29,11 @@ public class HuffmanTree {
         traverseTree(node.right, depth + 1, right);
 
         left.or(right); // merge the bits of left and right
+    }
 
-
+    public void callTraversal(){
+        BitSet newSet= new BitSet();
+        traverseTree(root, 0, newSet);
     }
 
 

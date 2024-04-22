@@ -32,13 +32,20 @@ public class HuffmanTest {
     public void testCreateQueue() {
 
         Map<Character, Integer> queueMap = queueHuffman.readFile();
-        queueHuffman.insertQueue(queueMap);
+        queueHuffman.createQueue(queueMap);
         assertEquals(5, queueHuffman.maxHeap.size());
         assertEquals(6, queueHuffman.maxHeap.poll().frequency);
         assertEquals(5, queueHuffman.maxHeap.poll().frequency);
         assertEquals(4, queueHuffman.maxHeap.poll().frequency);
         assertEquals(3, queueHuffman.maxHeap.poll().frequency);
         assertEquals(1, queueHuffman.maxHeap.poll().frequency);
+    }
+
+    @Test
+    public void testTreeTraversal(){
+        HuffmanTree tree= new HuffmanTree();
+        tree.callTraversal();
+        
 
     }
 
