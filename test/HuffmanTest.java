@@ -46,6 +46,9 @@ public class HuffmanTest {
         HuffmanTree tree= new HuffmanTree();
         huffman.constructTree();
         tree.callTraversal();
+        assertEquals(00, tree.codeMap.get('a'));
+        
+
         
 
     }

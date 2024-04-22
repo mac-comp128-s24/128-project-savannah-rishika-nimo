@@ -1,14 +1,12 @@
 import java.util.*;
 
 public class HuffmanTree {
-    private Huffman huffman;
-    private FileGUI fileGUI;
     public Node root;
-    private HashMap<Character, BitSet> codeMap;
+    public HashMap<Character, BitSet> codeMap;
 
 
     public HuffmanTree() {
-        huffman = new Huffman(fileGUI.getUserInput());
+
         root = null;
         codeMap = new HashMap<>();
 
@@ -35,6 +33,8 @@ public class HuffmanTree {
         BitSet newSet= new BitSet();
         traverseTree(root, 0, newSet);
     }
+
+   
 
 
 }
