@@ -13,12 +13,14 @@ public class FileGUI {
     private TextField inputText;
     private GraphicsText title;
     private Button addTextButton;
+    private HuffmanTree huffmanTree;
 
     public FileGUI() {
         canvas = new CanvasWindow("File Compressor Program", 900, 800);
         inputText = new TextField();
         title = new GraphicsText();
         addTextButton = new Button("Compress Text");
+        huffmanTree = new HuffmanTree();
         setUpUI();
 
 
@@ -51,6 +53,9 @@ public class FileGUI {
 
     public static void main(String[] args) {
         FileGUI window = new FileGUI();
+        huffmanTree
+        
+
     }
 
 

@@ -45,10 +45,8 @@ public class HuffmanTest {
     @Test
     public void testTreeTraversal() {
         // HuffmanTree tree = new HuffmanTree();
-
         // huffman = new Huffman("abbc");
         huffman = new Huffman("aaaaaabbbccccdddddee");
-        // newhuffman= new
         huffman.constructTree();
         HuffmanTree tree = huffman.getTree();
         tree.callTraversal();
