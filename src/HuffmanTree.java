@@ -1,38 +1,47 @@
 import java.util.*;
+import java.util.stream.IntStream;
 
 public class HuffmanTree {
     public Node root;
-    public HashMap<Character, BitSet> codeMap;
+    private HashMap<Character, BitSet> codeMap;
+    private HashMap<Character, Integer> depthMap;
 
 
     public HuffmanTree() {
         root = null;
         codeMap = new HashMap<>();
+        depthMap = new HashMap<>();
+    }
+
+    public HashMap<Character, Integer> getDepthMap() {
+        return depthMap;
     }
 
 
     public void traverseTree(Node node, int depth, BitSet bit) {
-
         if (node != null) {
             System.err.println(node.data);
         }
-
         BitSet left = new BitSet();
         BitSet right = new BitSet();
         right = (BitSet) bit.clone();
+        left = (BitSet) bit.clone();
+
         right.set(depth);
 
         if (node == null)
             return;
 
         if (node.data != null) {
+            depthMap.put(node.data, depth);
             codeMap.put(node.data, bit);
         }
         traverseTree(node.left, depth + 1, left);
         traverseTree(node.right, depth + 1, right);
 
-        // left.or(right); // merge the bits of left and right
+
     }
+
 
     public void callTraversal() {
         BitSet newSet = new BitSet();
@@ -47,6 +56,10 @@ public class HuffmanTree {
         preOrderTraverse(root, 1, sb);
 
         return sb.toString();
+    }
+
+    public HashMap<Character, BitSet> getCodeMap() {
+        return codeMap;
     }
 
     /**
@@ -72,6 +85,5 @@ public class HuffmanTree {
             preOrderTraverse(node.right, depth + 1, sb);
         }
     }
-
-
 }
+

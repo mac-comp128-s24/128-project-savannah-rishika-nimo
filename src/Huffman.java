@@ -12,6 +12,7 @@ public class Huffman {
     String inputString;
     HuffmanTree tree;
 
+
     public HuffmanTree getTree() {
         return tree;
     }
@@ -19,7 +20,7 @@ public class Huffman {
     public Huffman(String input) {
         inputString = input;
 
-        maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+        maxHeap = new PriorityQueue<>();
         Map<Character, Integer> frequencMap = readFile();
         maxHeap = createQueue(frequencMap);
         tree = new HuffmanTree();
@@ -63,27 +64,18 @@ public class Huffman {
         }
     }
 
-    // Method to encode input data
-    public String encodeData(String input, Map<Character, BitSet> codeMap) {
-        StringBuilder encodeData = new StringBuilder();
-        for (char c : input.toCharArray()) {
-            BitSet huffmanCode = codeMap.get(c);
-            encodeData.append(bitSetToString(huffmanCode));
-        }
 
-        return encodeData.toString();
-
-    }
-
-    // method that turns the bit into a string
-    // it takes the binary code and turns it into "1" or "0"
-    private String bitSetToString(BitSet bitset) {
-        StringBuilder stringBuilder = new StringBuilder();
-        for (int i = 0; i < bitset.length(); i++) {
-            stringBuilder.append(bitset.get(i) ? "1" : "0");
+    public List<BitDepth> encode() {
+        List<BitDepth> bdArray = new ArrayList<>();
+        for (char ch : inputString.toCharArray()) {
+            BitSet bitSet = tree.getCodeMap().get(ch);
+            Integer depth = tree.getDepthMap().get(ch);
+            BitDepth bitDepth = new BitDepth(depth, bitSet);
+            bdArray.add(bitDepth);
 
         }
-        return stringBuilder.toString();
+
+        return bdArray;
 
     }
 
