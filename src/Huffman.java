@@ -19,7 +19,7 @@ public class Huffman {
     public Huffman(String input) {
         inputString = input;
 
-        maxHeap = new PriorityQueue<>();
+        maxHeap = new PriorityQueue<>(Collections.reverseOrder());
         Map<Character, Integer> frequencMap = readFile();
         maxHeap = createQueue(frequencMap);
         tree = new HuffmanTree();

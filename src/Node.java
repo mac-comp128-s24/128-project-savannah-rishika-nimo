@@ -42,5 +42,21 @@ public class Node implements Comparable<Node> {
         }
 
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        if (data != null) {
+
+            return sb.append(data.toString() + frequency).toString();
+
+        } else {
+
+            return sb.append(frequency).toString();
+        }
+
+    }
+
+
 }
 

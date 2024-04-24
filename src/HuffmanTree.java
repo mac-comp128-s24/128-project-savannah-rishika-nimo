@@ -45,6 +45,7 @@ public class HuffmanTree {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         preOrderTraverse(root, 1, sb);
+
         return sb.toString();
     }
 

@@ -51,10 +51,14 @@ public class FileGUI {
 
     }
 
+    public HuffmanTree getHuffmanTree() {
+        return huffmanTree;
+    }
+
     public static void main(String[] args) {
         FileGUI window = new FileGUI();
-        huffmanTree
-        
+        System.out.println(window.getHuffmanTree().toString());
+
 
     }
 
