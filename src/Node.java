@@ -6,21 +6,6 @@ public class Node implements Comparable<Node> {
     public Node left, right;
     public Node parent;
 
-    // /**
-    // * Reference to the left child.
-    // */
-    // public Node<E> left;
-    // /**
-    // * Reference to the right child.
-    // */
-    // public Node<E> right;
-
-    // /**
-    // * Reference to the parent
-    // */
-    // public Node<E> parent;
-
-    // constrcutor
     public Node(Character data, int frequency) {
         this.data = data;
         this.frequency = frequency;
@@ -28,9 +13,6 @@ public class Node implements Comparable<Node> {
         right = null;
         parent = null;
     }
-
-
-    // This method compares the frequncy
 
     public int compareTo(Node o) {
         if (this.frequency < o.frequency) {
@@ -54,9 +36,7 @@ public class Node implements Comparable<Node> {
 
             return sb.append(frequency).toString();
         }
-
     }
-
 
 }
 

@@ -17,7 +17,8 @@ public class HuffmanTest {
 
     @BeforeEach
     public void makeTree() {
-        queueHuffman = new Huffman("aaaaaabbbccccdddddee");
+        queueHuffman = new Huffman();
+        queueHuffman.encode("aaaaaabbbccccdddddee");
         queueHuffman.constructTree();
         HuffmanTree tree = queueHuffman.getTree();
         tree.callTraversal();
@@ -28,7 +29,7 @@ public class HuffmanTest {
 
     @Test
     public void testReadFile() {
-        Map<Character, Integer> newMap = queueHuffman.readFile();
+        Map<Character, Integer> newMap = queueHuffman.readFile("aaaaaabbbccccdddddee");
         assertEquals(5, newMap.size());
         assertEquals(6, newMap.get('a'));
         assertEquals(3, newMap.get('b'));
@@ -38,7 +39,7 @@ public class HuffmanTest {
 
     @Test
     public void testCreateQueue() {
-        queueHuffman = new Huffman("aaaaaabbbccccdddddee");
+        // queueHuffman = new Huffman("aaaaaabbbccccdddddee");
         // queueHuffman.constructTree();
         System.out.println(queueHuffman.maxHeap);
         assertEquals(5, queueHuffman.maxHeap.size());
@@ -53,7 +54,7 @@ public class HuffmanTest {
     public void testTreeTraversal() {
         // HuffmanTree tree = new HuffmanTree();
         // huffman = new Huffman("abbc");
-        huffman = new Huffman("aaaaaabbbccccdddddee");
+        huffman = new Huffman();
         huffman.constructTree();
         HuffmanTree tree = huffman.getTree();
         tree.callTraversal();
@@ -90,7 +91,7 @@ public class HuffmanTest {
     @Test
 
     public void encode() {
-        List<BitDepth> bdArray = queueHuffman.encode();
+        List<BitDepth> bdArray = queueHuffman.encode("aaaaaabbbccccdddddee");
         assertEquals(20, bdArray.size());
         assertEquals(2, bdArray.get(0).getDepth());
         BitSet bitSet = new BitSet(2);

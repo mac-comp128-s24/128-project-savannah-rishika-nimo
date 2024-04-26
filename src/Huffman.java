@@ -8,8 +8,8 @@ import java.util.PriorityQueue;
 
 public class Huffman {
 
+
     PriorityQueue<Node> maxHeap;
-    String inputString;
     HuffmanTree tree;
 
 
@@ -17,18 +17,15 @@ public class Huffman {
         return tree;
     }
 
-    public Huffman(String input) {
-        inputString = input;
-
+    public Huffman() {
         maxHeap = new PriorityQueue<>();
-        Map<Character, Integer> frequencMap = readFile();
-        maxHeap = createQueue(frequencMap);
+
         tree = new HuffmanTree();
     }
 
-    public Map<Character, Integer> readFile() {
+    public Map<Character, Integer> readFile(String stringInput) {
         Map<Character, Integer> frequencyMap = new HashMap<>();
-        char[] charInput = inputString.toCharArray();
+        char[] charInput = stringInput.toCharArray();
         for (char eachChar : charInput) {
             if (frequencyMap.get(eachChar) != null) {
                 Integer freq = frequencyMap.get(eachChar);
@@ -65,19 +62,24 @@ public class Huffman {
     }
 
 
-    public List<BitDepth> encode() {
+    public List<BitDepth> encode(String input) {
+        Map<Character, Integer> frequencMap = readFile(input);
+        maxHeap = createQueue(frequencMap);
+        constructTree();
+        tree.callTraversal();
+
         List<BitDepth> bdArray = new ArrayList<>();
-        for (char ch : inputString.toCharArray()) {
+        for (char ch : input.toCharArray()) {
             BitSet bitSet = tree.getCodeMap().get(ch);
             Integer depth = tree.getDepthMap().get(ch);
             BitDepth bitDepth = new BitDepth(depth, bitSet, ch);
             bdArray.add(bitDepth);
 
         }
-
         return bdArray;
 
     }
+
 
 }
 
