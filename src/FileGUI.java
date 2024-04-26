@@ -75,6 +75,7 @@ public class FileGUI {
 
     }
 
+
     public String getUserInput() {
         return inputText.getText();
 
