@@ -4,11 +4,13 @@ import java.util.stream.IntStream;
 public class BitDepth {
     private int depth;
     private BitSet bitSet;
+    private char letter;
 
 
-    public BitDepth(int depth, BitSet bitSet) {
+    public BitDepth(int depth, BitSet bitSet, char letter) {
         this.depth = depth;
         this.bitSet = bitSet;
+        this.letter = letter;
     }
 
 
@@ -25,6 +27,10 @@ public class BitDepth {
 
     public BitSet getBitSet() {
         return bitSet;
+    }
+
+    public char getLetter() {
+        return letter;
     }
 
 

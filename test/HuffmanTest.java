@@ -38,6 +38,8 @@ public class HuffmanTest {
 
     @Test
     public void testCreateQueue() {
+        queueHuffman = new Huffman("aaaaaabbbccccdddddee");
+        // queueHuffman.constructTree();
         System.out.println(queueHuffman.maxHeap);
         assertEquals(5, queueHuffman.maxHeap.size());
         assertEquals(2, queueHuffman.maxHeap.poll().frequency);
@@ -70,7 +72,7 @@ public class HuffmanTest {
     public void testBitToString() {
         BitSet bitSet = new BitSet(3);
         bitSet.set(1);
-        BitDepth bitDepth = new BitDepth(3, bitSet);
+        BitDepth bitDepth = new BitDepth(3, bitSet, 'a');
 
         BitSet bitSetNew = new BitSet(5);
         bitSetNew.set(1);
@@ -78,7 +80,7 @@ public class HuffmanTest {
         bitSetNew.set(4);
         System.out.println("-------");
         System.out.println(bitSetNew.size());
-        BitDepth bitDepthNew = new BitDepth(5, bitSetNew);
+        BitDepth bitDepthNew = new BitDepth(5, bitSetNew, 'a');
 
         assertEquals("010", bitDepth.toString());
         assertEquals("01101", bitDepthNew.toString());

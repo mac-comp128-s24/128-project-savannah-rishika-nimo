@@ -70,7 +70,7 @@ public class Huffman {
         for (char ch : inputString.toCharArray()) {
             BitSet bitSet = tree.getCodeMap().get(ch);
             Integer depth = tree.getDepthMap().get(ch);
-            BitDepth bitDepth = new BitDepth(depth, bitSet);
+            BitDepth bitDepth = new BitDepth(depth, bitSet, ch);
             bdArray.add(bitDepth);
 
         }
