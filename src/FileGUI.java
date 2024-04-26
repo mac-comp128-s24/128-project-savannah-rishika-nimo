@@ -86,7 +86,6 @@ public class FileGUI {
 
     public static void main(String[] args) {
         FileGUI window = new FileGUI();
-        System.out.println(window.getHuffmanTree().toString());
 
 
     }
