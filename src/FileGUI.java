@@ -104,7 +104,6 @@ public class FileGUI {
 
 
     public void displayOutput() {
-
         List<BitDepth> finalList = huffman.encode(getUserInput());
         calculateCompressedSize(finalList);
         int y = 200;
@@ -122,7 +121,6 @@ public class FileGUI {
             y = y + 30;
             codes.add(letterCode);
             canvas.add(letterCode);
-
         }
     }
 
@@ -138,6 +136,5 @@ public class FileGUI {
     public static void main(String[] args) {
         FileGUI window = new FileGUI();
     }
-
 
 }

@@ -36,6 +36,7 @@ public class HuffmanTree {
             depthMap.put(node.data, depth);
             codeMap.put(node.data, bit);
         }
+
         traverseTree(node.left, depth + 1, left);
         traverseTree(node.right, depth + 1, right);
 
