@@ -7,7 +7,10 @@ import edu.macalester.graphics.ui.TextField;
 import java.awt.Color;
 import java.util.*;
 
-
+/**
+ * The window and user interface for inputing the string and calculating and displaying the size and
+ * codes of the compressed strings.
+ */
 public class FileGUI {
     private CanvasWindow canvas;
     private TextField inputText;
@@ -20,6 +23,10 @@ public class FileGUI {
     private Huffman huffman;
     private GraphicsGroup codes;
 
+    /**
+     * Sets up the FileGUI and initialises the constructor.
+     */
+
     public FileGUI() {
         canvas = new CanvasWindow("File Compressor Program", 900, 800);
         inputText = new TextField();
@@ -30,15 +37,22 @@ public class FileGUI {
         stringSize = new GraphicsText();
         compressedSize = new GraphicsText();
         huffman = new Huffman();
-
         setUpUI();
     }
+
+    /**
+     * Calculates the size of the original text in bytes.
+     */
 
     public void calculateTextSize() {
         Integer textSize = getUserInput().length() * 2;
         stringSize.setText("Original String size: " + textSize.toString() + " Bytes");
 
     }
+
+    /**
+     * Calculates the size of the compressed text in bytes.
+     */
 
     public void calculateCompressedSize(List<BitDepth> bdArray) {
         Integer sizeCompText = 0;
@@ -55,6 +69,9 @@ public class FileGUI {
 
     }
 
+    /**
+     * Create the user interface
+     */
     public void setUpUI() {
         inputText.setPosition(120, 300);
         inputText.setBackground(Color.LIGHT_GRAY);
@@ -81,27 +98,15 @@ public class FileGUI {
 
         addTextButton.setPosition(230, 300);
         canvas.add(addTextButton);
-        // addTextButton.onClick(() -> run());
+
         addTextButton.onClick(() -> calculateTextSize());
         addTextButton.onClick(() -> displayOutput());
-
-
-        String str = inputText.getText();
-
     }
 
-    public void clear() {
-        canvas.remove(compressedSize);
-        canvas.remove(stringSize);
-        canvas.remove(codes);
-    }
 
-    public void run() {
-        clear();
-        calculateTextSize();
-        displayOutput();
-    }
-
+    /**
+     * Displays the characters in the string and their respective huffman codes.
+     */
 
     public void displayOutput() {
         List<BitDepth> finalList = huffman.encode(getUserInput());
@@ -124,10 +129,18 @@ public class FileGUI {
         }
     }
 
+    /**
+     * Returns the text from the user input.
+     */
+
     public String getUserInput() {
         return inputText.getText();
 
     }
+
+    /**
+     * Returns the huffman tree.
+     */
 
     public HuffmanTree getHuffmanTree() {
         return huffmanTree;

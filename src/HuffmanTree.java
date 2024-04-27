@@ -1,6 +1,9 @@
 import java.util.*;
 
-
+/**
+ * Class for a binary tree based on the huffman algorithm. This class is used to perform the
+ * preorder traversal on a binary tree.
+ **/
 public class HuffmanTree {
     public Node root;
     private HashMap<Character, BitSet> codeMap;
@@ -13,9 +16,13 @@ public class HuffmanTree {
         depthMap = new HashMap<>();
     }
 
-    public HashMap<Character, Integer> getDepthMap() {
-        return depthMap;
-    }
+    /**
+     * Perform a preorder traversal.
+     * 
+     * @param node  The local root
+     * @param depth The depth
+     * @param bit   The bitset to save the output huffman code
+     */
 
 
     public void traverseTree(Node node, int depth, BitSet bit) {
@@ -43,12 +50,21 @@ public class HuffmanTree {
 
     }
 
-
+    /**
+     * Creates a new bitset and calls the traverse tree method.
+     */
     public void callTraversal() {
         BitSet newSet = new BitSet();
         traverseTree(root, 0, newSet);
+    }
 
 
+    public HashMap<Character, BitSet> getCodeMap() {
+        return codeMap;
+    }
+
+    public HashMap<Character, Integer> getDepthMap() {
+        return depthMap;
     }
 
     @Override
@@ -59,13 +75,9 @@ public class HuffmanTree {
         return sb.toString();
     }
 
-    public HashMap<Character, BitSet> getCodeMap() {
-        return codeMap;
-    }
-
     /**
-     * Perform a preorder traversal.
-     *
+     * Perform a preorder traversal. This method is used for printing the tree.
+     * 
      * @param node  The local root
      * @param depth The depth
      * @param sb    The string buffer to save the output
