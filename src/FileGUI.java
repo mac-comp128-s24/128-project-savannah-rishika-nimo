@@ -73,6 +73,7 @@ public class FileGUI {
      * Create the user interface
      */
     public void setUpUI() {
+
         inputText.setPosition(120, 300);
         inputText.setBackground(Color.LIGHT_GRAY);
 

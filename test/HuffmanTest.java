@@ -41,13 +41,13 @@ public class HuffmanTest {
     public void testCreateQueue() {
         // queueHuffman = new Huffman("aaaaaabbbccccdddddee");
         // queueHuffman.constructTree();
-        System.out.println(queueHuffman.maxHeap);
-        assertEquals(5, queueHuffman.maxHeap.size());
-        assertEquals(2, queueHuffman.maxHeap.poll().frequency);
-        assertEquals(3, queueHuffman.maxHeap.poll().frequency);
-        assertEquals(4, queueHuffman.maxHeap.poll().frequency);
-        assertEquals(5, queueHuffman.maxHeap.poll().frequency);
-        assertEquals(6, queueHuffman.maxHeap.poll().frequency);
+        System.out.println(queueHuffman.minHeap);
+        assertEquals(5, queueHuffman.minHeap.size());
+        assertEquals(2, queueHuffman.minHeap.poll().frequency);
+        assertEquals(3, queueHuffman.minHeap.poll().frequency);
+        assertEquals(4, queueHuffman.minHeap.poll().frequency);
+        assertEquals(5, queueHuffman.minHeap.poll().frequency);
+        assertEquals(6, queueHuffman.minHeap.poll().frequency);
     }
 
     @Test

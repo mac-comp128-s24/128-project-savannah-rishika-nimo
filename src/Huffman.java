@@ -10,7 +10,7 @@ import java.util.PriorityQueue;
  */
 public class Huffman {
 
-    PriorityQueue<Node> maxHeap;
+    PriorityQueue<Node> minHeap;
     HuffmanTree tree;
 
     public HuffmanTree getTree() {
@@ -18,12 +18,13 @@ public class Huffman {
     }
 
     public Huffman() {
-        maxHeap = new PriorityQueue<>();
+        minHeap = new PriorityQueue<>();
         tree = new HuffmanTree();
     }
 
     /**
      * Reads user input and counts the frequency of each character.
+     * 
      * @param stringInput
      * @return map of character and corresponding frequency
      */
@@ -45,42 +46,43 @@ public class Huffman {
 
     /**
      * Creates ordered queue of nodes from character/frequency map
+     * 
      * @param inputMap
      * @return PriorityQueue of nodes
      */
     public PriorityQueue<Node> createQueue(Map<Character, Integer> inputMap) {
         for (Map.Entry<Character, Integer> entry : inputMap.entrySet()) {
             Node newNode = new Node(entry.getKey(), entry.getValue());
-            maxHeap.add(newNode);
+            minHeap.add(newNode);
         }
-        return maxHeap;
+        return minHeap;
     }
 
     /**
      * Builds binary tree from priority queue
      */
     public void constructTree() {
-        while (maxHeap.size() > 1) {
-            Node firstLeaf = maxHeap.poll();
-            Node secondleaf = maxHeap.poll();
+        while (minHeap.size() > 1) {
+            Node firstLeaf = minHeap.poll();
+            Node secondleaf = minHeap.poll();
             int newFrequency = firstLeaf.frequency + secondleaf.frequency;
             Node parentNode = new Node(null, newFrequency);
             tree.root = parentNode;
             parentNode.left = firstLeaf;
             parentNode.right = secondleaf;
-            maxHeap.add(parentNode);
+            minHeap.add(parentNode);
         }
     }
 
     /**
-     * Iterates over user input and creates new BitDepth object to store 
-     * each character and its code
+     * Iterates over user input and creates new BitDepth object to store each character and its code
+     * 
      * @param input
      * @return list of BitDepth objects in order of original text
      */
     public List<BitDepth> encode(String input) {
         Map<Character, Integer> frequencMap = readFile(input);
-        maxHeap = createQueue(frequencMap);
+        minHeap = createQueue(frequencMap);
         constructTree();
         tree.callTraversal();
 
