@@ -1,7 +1,5 @@
 # File Compressor Program
 
-Info about your project goes here
-
 File Compressor Program
 
 - Overview
@@ -30,3 +28,10 @@ The node class represents a node object. It initializes character and frequency.
 - Running the code
 
 To see how the algorithm works, all you need to do is run the code, then put your text into the inputText box. Wen you do that you would click Compress Text and your text should be compressed and displayed with the characters and the Huffman codes alongside it.
+
+- Limitations of the program
+  
+This program only implements the Huffman algorithm for encoding the text using a string input, not an actual file. Future work needs to be done to implement the decoding method and to make the program take a file as an input over just a string. Furthermore, to re-run the string compression, the program needs to be run again. It does not automatically reset the program when a new string is typed in for compression. 
+
+
+
