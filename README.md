@@ -28,11 +28,11 @@ The HuffmanTree class is used to traverse the tree made in Huffman. The traverse
 
 The node class represents a node object. It initializes character and frequency. It also has right, left and parentnode objects. In the class there is a method that compares the frequency of the characters as well as a toString method that turns the data into a string.
 
-- Running the code
+**Running the code:**
 
 To see how the algorithm works, the main method in the FileGUI class needs to be run. The user can input text into the inputText box in the user interface. Clicking the Compress Text button compresses the text and displays the original string size and compressed string size, along with the characters and their Huffman codes.
 
-- Limitations of the program
+**Limitations of the program and future goals:**
   
 This program only implements the Huffman algorithm for encoding the text using a string input, not an actual file. Future work needs to be done to implement the decoding method and to make the program take a file as an input over just a string. Furthermore, to re-run the string compression, the program needs to be run again. It does not automatically reset the program when a new string is typed in for compression. The user interface also shows every character in the string and its huffman code as many times as the character appears. There is thus redudency which needs to be minimised by displaying each character only once. 
 
