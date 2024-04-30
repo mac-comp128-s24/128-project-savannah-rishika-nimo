@@ -39,8 +39,6 @@ public class HuffmanTest {
 
     @Test
     public void testCreateQueue() {
-        // queueHuffman = new Huffman("aaaaaabbbccccdddddee");
-        // queueHuffman.constructTree();
         System.out.println(queueHuffman.minHeap);
         assertEquals(5, queueHuffman.minHeap.size());
         assertEquals(2, queueHuffman.minHeap.poll().frequency);
@@ -51,20 +49,12 @@ public class HuffmanTest {
     }
 
     @Test
-    public void testTreeTraversal() {
-        // HuffmanTree tree = new HuffmanTree();
-        // huffman = new Huffman("abbc");
+    public void printTreeTraversal() {
         huffman = new Huffman();
         huffman.constructTree();
         HuffmanTree tree = huffman.getTree();
         tree.callTraversal();
-        // assertEquals(00, tree.codeMap.get('a'));
         System.out.println(tree.toString());
-        // for (Map.Entry<Character, BitSet> entry : tree.codeMap.entrySet()) {
-        // System.out.println(entry.getKey());
-        // System.out.println(entry.getValue());
-        // }
-
     }
 
 
