@@ -6,8 +6,8 @@ File Compressor Program
   
 This project is designed to compress text files using the Huffman coding algorithm. Huffman coding is a popular method used to compress files. The program takes an input string, creates a binary tree according to each character and its frequency, calculates Huffman codes for each character in the string, and then displays the compressed string size along with the Huffman codes for each character.
 
--       Information on each class:
-
+- **Information on each class:
+**
 - FileGUI:
 
 The FileGui class is responsible for interacting with the user. This class allows the user to input the string they need to compress. It also allows the user to see how much space they used before the algorithm and after. This file opens a window that displays the resulting Huffman codes for individual characters in the input string to the user. These codes are not only important for the user to see the process of the algorithm but can also be used for decoding the text back to its original form. The Huffman codes are displayed alongside their corresponding characters.
