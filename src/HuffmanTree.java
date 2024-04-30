@@ -76,7 +76,7 @@ public class HuffmanTree {
     }
 
     /**
-     * Perform a preorder traversal. This method is used for printing the tree.
+     * Perform a preorder traversal. This method is used for printing the tree for testing.
      * 
      * @param node  The local root
      * @param depth The depth
